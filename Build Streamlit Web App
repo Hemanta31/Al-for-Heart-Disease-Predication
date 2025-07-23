@@ -1,0 +1,46 @@
+import streamlit as st
+import numpy as np
+import joblib
+
+# Load the model
+model = joblib.load('../model/heart_model.pkl')
+
+# Set title
+st.title("Heart Disease Prediction App")
+st.write("Enter the patient details below:")
+
+# Create input fields
+age = st.number_input("Age", 20, 100, step=1)
+sex = st.selectbox("Sex", ("Male", "Female"))
+cp = st.selectbox("Chest Pain Type", ["Typical angina", "Atypical angina", "Non-anginal pain", "Asymptomatic"])
+trestbps = st.number_input("Resting Blood Pressure (mm Hg)", 80, 200, step=1)
+chol = st.number_input("Serum Cholesterol (mg/dl)", 100, 600, step=1)
+fbs = st.selectbox("Fasting Blood Sugar > 120 mg/dl", ("Yes", "No"))
+restecg = st.selectbox("Resting ECG", ["Normal", "ST-T wave abnormality", "Left ventricular hypertrophy"])
+thalach = st.number_input("Max Heart Rate Achieved", 60, 250, step=1)
+exang = st.selectbox("Exercise Induced Angina", ("Yes", "No"))
+oldpeak = st.number_input("ST depression (Oldpeak)", 0.0, 6.0, step=0.1)
+slope = st.selectbox("Slope of the ST segment", ["Upsloping", "Flat", "Downsloping"])
+ca = st.selectbox("Number of Major Vessels Colored (0-3)", [0, 1, 2, 3])
+thal = st.selectbox("Thalassemia", ["Normal", "Fixed defect", "Reversible defect"])
+
+# Convert categorical values to numeric
+sex = 1 if sex == "Male" else 0
+cp = ["Typical angina", "Atypical angina", "Non-anginal pain", "Asymptomatic"].index(cp)
+fbs = 1 if fbs == "Yes" else 0
+restecg = ["Normal", "ST-T wave abnormality", "Left ventricular hypertrophy"].index(restecg)
+exang = 1 if exang == "Yes" else 0
+slope = ["Upsloping", "Flat", "Downsloping"].index(slope)
+thal = ["Normal", "Fixed defect", "Reversible defect"].index(thal)
+
+# Create input array
+input_data = np.array([[age, sex, cp, trestbps, chol, fbs, restecg,
+                        thalach, exang, oldpeak, slope, ca, thal]])
+
+# Predict
+if st.button("Predict"):
+    prediction = model.predict(input_data)
+    if prediction[0] == 1:
+        st.error("The model predicts that the patient **has heart disease**.")
+    else:
+        st.success(" The model predicts that the patient **does not have heart disease**.")
