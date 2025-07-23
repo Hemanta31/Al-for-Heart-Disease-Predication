@@ -1,0 +1,2 @@
+# Save the trained model
+joblib.dump(model, '../model/heart_model.pkl')
