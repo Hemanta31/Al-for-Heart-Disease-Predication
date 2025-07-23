@@ -1,0 +1,3 @@
+Load the Dataset
+df = pd.read_csv('../data/heart.csv')
+df.head()
