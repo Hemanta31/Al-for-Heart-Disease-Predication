@@ -18,14 +18,19 @@ Classification Models: The project utilizes various classification models provid
 Model Evaluation: The project evaluates the performance of the classification models using evaluation metrics such as accuracy, precision, recall, and F1 score. These metrics provide insights into the models' ability to correctly predict the presence or absence of heart disease. Additionally, visualizations such as confusion matrices are created to compare the predicted labels against the actual labels
 
 🧠 Predicts risk of heart disease using a trained Random Forest Classifier
+
 ⚡ Simple and interactive command-line interface
+
 📈 Uses the UCI Heart Disease dataset (Cleveland subset)
+
 🔄 Full pipeline: model training, saving, and real-time inference
+
 🧪 Easy to adapt for any binary classification task
 
 🗂️ Project Structure
 
 📂 heart-disease-predictor
+
  ├── 📁 data/                # Dataset folder (heart.csv)
  ├── 📁 asset/               # Contains Demo Thumbnail
  ├── 🧠 model.py             # Script to train and save the model
@@ -50,10 +55,15 @@ prediction = model.predict([your_input])
 ✅ Requirements
 
 pandas
+
 numpy
+
 scikit-learn
+
 joblib
+
 matplotlib
+
 seaborn
 
 📄 License
