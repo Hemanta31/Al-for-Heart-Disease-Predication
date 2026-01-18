@@ -2,9 +2,11 @@
 The "Heart Disease Prediction" project focuses on predicting the presence of heart disease in individuals using machine learning techniques. By leveraging popular Python libraries such as NumPy, Pandas, and Scikit-learn (sklearn), this project provides a comprehensive solution for accurate disease prediction.
 
 Project Overview
+
 The "Heart Disease Prediction" project aims to develop a model that can accurately predict the presence of heart disease based on various medical factors. Early detection of heart disease is crucial for timely intervention and treatment. By employing machine learning algorithms and a curated dataset, this project offers a valuable tool for predicting heart diseas
 
 Key Features
+
 Data Collection and Processing: The project involves collecting a dataset containing features related to individuals' health, such as age, sex, blood pressure, cholesterol levels, and more. Using Pandas, the collected data is cleaned, preprocessed, and transformed to ensure it is suitable for analysis. The dataset is included in the repository for easy access.
 
 Data Visualization: The project utilizes data visualization techniques to gain insights into the dataset. Matplotlib and seaborn are employed to create visualizations such as histograms, bar plots, and correlation matrices. These visualizations provide a deeper understanding of the relationships between features and help identify patterns and correlations with heart disease.
